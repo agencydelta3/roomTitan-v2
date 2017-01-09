@@ -1,0 +1,15 @@
+body {
+
+}
+
+p {
+  color: #5a5959;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #353535;
+}
+
+.btn-block {
+  width: 100%;
+}

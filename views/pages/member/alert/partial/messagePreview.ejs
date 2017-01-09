@@ -1,0 +1,22 @@
+<div>
+  {% set randomMessageNumber=[3,4,5,8] | random %}
+  {% for j in range(1,randomMessageNumber) %}
+    <div class="row rt-message-listing z-depth-1">
+      <div class="col s3 center">
+        <a href="#"><img src="https://placeimg.com/50/50/people"
+                         class="responsive-img circle rt-costom-hover-img">
+          <p>Sender name</p>
+        </a>
+      </div>
+      <div class="col s9">
+        <a href="#">
+          <h6><a href="/member/alert_details">I want to rent your property. (message title)</a></h6>
+          <pre><p>Hi John doe,
+How are you?.I am mazba uddin ...</p></pre>
+          <p class="rt-message-send-time-status"><span class="left">Status: Unread </span> <span
+              class="right"> Dec 22-2016 @ 3:45PM</span></p>
+        </a>
+      </div>
+    </div>
+  {% endfor %}
+</div>

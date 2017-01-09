@@ -1,0 +1,55 @@
+{% extends 'master' %}
+
+{% block content %}
+
+  {% set message="Mr. John Doe,
+
+Thank you for your recent application to become a writer on Woculus.
+We are very much complimented that you would like to write for Woculus.
+
+Lorem Ipsum is simply dummy text of the printing and typesetting
+industry.Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s,when an unknown printer took a galley of
+type and scrambled it to make a typespecimen book. It has survived
+not only five centuries, but also the leap intoelectronic
+typesetting, remaining essentially unchanged. It was popularised
+in the 1960s with the release of Letraset sheets containing Lorem
+Ipsum passages,and more recently with desktop publishing software
+like Aldus PageMaker including versions of Lorem Ipsum.
+
+I would appreciate being notified if you wish to cancel your
+application for any reason.
+
+Best regards," %}
+
+  <section>
+    <div class="row">
+      <div class="col s12 m7">
+        <a href="/member/alert" class="right tooltipped" data-position="left" data-delay="50"
+           data-tooltip="Back to alert page">
+          <i class="fa fa-times-circle fa-2x rt-back-to-alert-page" aria-hidden="true"></i>
+        </a>
+        <div class="z-depth-2">
+          <h6 class="rt-message-details-subject">I want to rent your property mbjasbb kxjbcdjksbcdjksbcdsj
+            bsdkjbcdjksbckjsd. (message title)</h6>
+          <hr>
+          <pre class="rt-alert-detailse-pre"><p class="rt-message-details-body">{{ message }}</p></pre>
+        </div>
+      </div>
+      <div class="col s12 m5">
+
+        {% include 'member/alert/partial/messagePreview' %}
+
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    $(document).ready(function () {
+      $('.tooltipped').tooltip({delay: 50});
+    });
+  </script>
+
+
+{% endblock %}

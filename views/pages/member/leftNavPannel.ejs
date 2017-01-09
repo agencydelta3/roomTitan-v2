@@ -1,0 +1,36 @@
+<p></p>
+<div class="rt-left-nav-body">
+  <table class="highlight">
+    <tbody>
+    <tr>
+      <td><a href="collapsible.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></td>
+    </tr>
+    <tr {{ "class=active" if activeLink=="profile" else " " }}>
+      <td><a href="profile"><i class="fa fa-user-o" aria-hidden="true"></i> Profile</a></td>
+    </tr>
+    <tr {{ "class=active" if activeLink=="property" else " " }}>
+      <td><a href="property"><i class="fa fa-building" aria-hidden="true"></i> Property</a></td>
+    </tr>
+    <tr {{ "class=active" if activeLink=="payment" else " " }}>
+      <td><a href="payment"><i class="fa fa-credit-card" aria-hidden="true"></i> Payment</a></td>
+    </tr>
+    <tr {{ "class=active" if activeLink=="alert" else " " }}>
+      <td><a href="alert"><i class="fa fa-bell-o" aria-hidden="true"></i> Alert</a></td>
+    </tr>
+    <tr {{ "class=active" if activeLink=="settings" else " " }}>
+      <td><a href="settings"><i class="fa fa-cogs" aria-hidden="true"></i> Settings</a></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="highlight">
+    <tbody>
+    <tr>
+      <td><a href="collapsible.html"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
