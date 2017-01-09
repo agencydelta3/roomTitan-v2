@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var fs = require('fs');
 var index = require('./routes/index');
 
 
@@ -23,6 +23,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+
+//File Stream Magic!
+fs.readdirSync('./routes/controllers').forEach(function(file) {
+  if (file.substr(-3) == '.js') {
+    route = require('./routes/controllers/' + file);
+    route.controller(app);
+  }
+});
+
 
 
 // catch 404 and forward to error handler
@@ -45,6 +54,6 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-app.listen(3000,function () {
-  console.log("RoomTitan-v2 running on port: 3000");
+app.listen(3001,function () {
+  console.log("RoomTitan-v2 running on port: 3001");
 })

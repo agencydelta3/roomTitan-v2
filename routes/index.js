@@ -6,4 +6,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* GET all static pages(in footer). */
+router.get('/:staticpage', function(req, res) {
+  res.render('staticpage', {title: req.params.staticpage});
+});
+
+
 module.exports = router;
