@@ -1,3 +1,4 @@
+// map for profile public view
 var map;
 var markers = [];
 var infowindow;
@@ -152,6 +153,45 @@ function getPixelFromLatLng(latLng) {
 }
 
 
+// map for add property
 
+function userInputedLocationIndicator() {
+    var imagePlaceIndicator = {
+        url: './images/rt_marker.png',
+        scaledSize: new google.maps.Size(65, 65)
+    };
+    map = new google.maps.Map(document.getElementById('locationIndicator'), {
+        center: {lat: 38.317971, lng: -97.844799},
+        zoom: 4
+    });
+    var input = document.getElementById('locationFinder');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    autocomplete.bindTo('bounds', map);
 
+    var marker = new google.maps.Marker({
+        map: map,
+        icon: imagePlaceIndicator,
+        draggable: true,
+        anchorPoint: new google.maps.Point(0, -29)
+    });
+
+    autocomplete.addListener('place_changed', function () {
+        marker.setVisible(false);
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+            window.alert("No details available for input: '" + place.name + "'");
+            return;
+        }
+
+        if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+        } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(15);
+        }
+
+        marker.setPosition(place.geometry.location);
+        marker.setVisible(true);
+    });
+}
 

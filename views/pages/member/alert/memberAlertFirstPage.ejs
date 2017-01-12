@@ -1,59 +1,54 @@
-{% extends 'master' %}
+<% include ../../../partials/template/header.ejs %>
 
-{% block content %}
-
-  <div class="row">
+<div class="row">
     <div class="col s12 m3 rt-nav-left-for-member hide-on-small-only">
 
-      {% include 'member/leftNavPannel' %}
+        <% include ../../member/leftNavPannel.ejs %>
 
     </div>
 
     <div class="col s12 m9">
-
-      {% set randomPropertyNumber=[3,4] | random %}
-      {% for i in range(1,randomPropertyNumber) %}
         <div class="row">
-          <div class="col s12">
-            <h5 class="rt-block-sms-title">Renter want to talk with you for <a href="#">Room for rent {{ i }}</a></h5>
-            <hr>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12 m5">
-            <div class="card small">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="https://placeimg.com/300/300/arch">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Room for rent {{ i }}<i
-                    class="material-icons right">more_vert</i></span>
-                <p class="rt-dot-before-spacification"><span
-                    class="26a69a teal lighten-1 rt-price-on-card">$3,430 </span> <span>4bd</span> <span>3ba</span>
-                  <span>3200 sq ft</span></p>
-              </div>
-              <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Room for rent {{ i }}<i
-                  class="material-icons right">close</i></span>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever since the 1500s, when an unknown printer took</p>
-                <p class="rt-dot-before-spacification">
-                  <span class="26a69a teal lighten-1 rt-price-on-card">$3,430 </span>
-                  <span>4bd</span> <span>3ba</span> <span>3200 sq ft</span> <span>12/22/2016</span></p>
-
-              </div>
+            <div class="col s12">
+                <h5 class="rt-block-sms-title">Renter want to talk with you for <a href="#">Room for rent 1</a>
+                </h5>
+                <hr>
             </div>
-          </div>
-          <div class="col s12 m7">
-
-            {% include 'member/alert/partial/messagePreview' %}
-
-          </div>
         </div>
+        <div class="row">
+            <div class="col s12 m5">
+                <div class="card small">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="https://placeimg.com/300/300/arch">
+                    </div>
+                    <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Room for rent 1<i
+                            class="material-icons right">more_vert</i></span>
+                        <p class="rt-dot-before-spacification"><span
+                                    class="26a69a teal lighten-1 rt-price-on-card">$3,430 </span> <span>4bd</span>
+                            <span>3ba</span>
+                            <span>3200 sq ft</span></p>
+                    </div>
+                    <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Room for rent 1<i
+                          class="material-icons right">close</i></span>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the
+                            industry's standard dummy text ever since the 1500s, when an unknown printer took</p>
+                        <p class="rt-dot-before-spacification">
+                            <span class="26a69a teal lighten-1 rt-price-on-card">$3,430 </span>
+                            <span>4bd</span> <span>3ba</span> <span>3200 sq ft</span> <span>12/22/2016</span></p>
 
-      {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7">
 
+                <% include ./partial/messagePreview.ejs %>
+
+            </div>
+        </div>
     </div>
-  </div>
+</div>
 
-{% endblock %}
+<% include ../../../partials/template/footer.ejs %>

@@ -1,83 +1,25 @@
-{% extends 'master' %}
+<% include ../../../partials/template/header.ejs %>
 
-{% block content %}
-
-  <section>
+<section>
     <div class="row">
-      <div class="col s12 m3 rt-nav-left-for-member hide-on-small-only">
+        <div class="col s12 m3 rt-nav-left-for-member hide-on-small-only">
 
-        {% include 'member/leftNavPannel' %}
+            <% include ../../member/leftNavPannel.ejs %>
 
-      </div>
+        </div>
 
-      <div class="col s12 m9">
-        <form>
-          <div class="row">
-            <div class="col s12 m8">
-              <p class="right">1/5</p>
-              <h4 class="center flow-text">Property management</h4>
-              <h6 class="center">Add property</h6>
-              <p class="center"><a href="">Fair housing policy</a></p>
-
-              <div class="row">
-                <div class="input-field col s12">
-                  <select>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                  </select>
-                  <label>Select property type</label>
-                  <p class="rt-input-field-description">Where is the Selected property type that you would like
-                    list?</p>
+        <div class="col s12 m9">
+            <form>
+                <div style="display: none">
+                    <% include ./partials/pageOneOfFive.ejs %>
                 </div>
-              </div>
-
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="last_name" type="text" class="validate">
-                  <label for="last_name">Enter an address, post code or zip code</label>
+                <div>
+                    <% include ./partials/pageTwoOfFive.ejs %>
                 </div>
-              </div>
 
-              <div class="row">
-                <div class="input-field col s12">
-                  <select>
-                    <option value="" disabled selected>Choose your option</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                  </select>
-                  <label>What is the most suitable description of this area?</label>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col s12">
-                  <p class="rt-input-field-description">
-                    By posting a room, you agree to our <a>terms & condition</a> and
-                    <a>fair housing policy</a> In particular, you agree that listing
-                    is accurate (location, Photos and details), non-discriminatory and
-                    compiles with all statutory in your country.
-                    compiles with all statutory in your country.
-                  </p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col s12">
-                  <div class="right">
-                    <a class="waves-effect waves-light btn">Next</a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </form>
-
-      </div>
+            </form>
+        </div>
     </div>
-  </section>
+</section>
 
-{% endblock %}
+<% include ../../../partials/template/footer.ejs %>
