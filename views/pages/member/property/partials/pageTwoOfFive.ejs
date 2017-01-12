@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="col s12 m8">
+        <p class="right">2/5</p>
+        <h4 class="center flow-text">About your property</h4>
+
+        <div class="row">
+            <form class="col s12">
+                <div class="row tr-remove-margin">
+                    <div class="input-field col s12">
+                        <i class="fa fa-map-marker material-icons prefix" aria-hidden="true"></i>
+                        <input id="locationFinder" type="text" class="validate">
+                        <!--<label for="locationFinder">Location</label>-->
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <form class="col s12">
+                <div id="locationIndicator" style="height: 200px;width: 100%;"></div>
+            </form>
+        </div>
+
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fa fa-area-chart material-icons prefix" aria-hidden="true"></i>
+                        <input id="icon_prefix" type="text" class="validate">
+                        <label for="icon_prefix">What area is this?</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="fa fa-bed material-icons prefix" aria-hidden="true"></i>
+                <select>
+                    <option value="" disabled selected>Choose number of bed room</option>
+                    <option value="1">1 Bedroom</option>
+                    <option value="2">2 Bedroom</option>
+                    <option value="3">3 Bedroom</option>
+                </select>
+            </div>
+            <div class="input-field col s6">
+                <i class="fa fa-home material-icons prefix" aria-hidden="true"></i>
+                <select>
+                    <option value="" disabled selected>What type of apartment is it?</option>
+                    <option value="1">Flat</option>
+                    <option value="2">bla</option>
+                    <option value="3">Bla</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <i class="fa fa-tachometer material-icons prefix" aria-hidden="true"></i>
+                <select>
+                    <option value="" disabled selected>Choose how many room would?</option>
+                    <option value="1">1 Room</option>
+                    <option value="2">2 Room</option>
+                    <option value="3">3 Room</option>
+                </select>
+            </div>
+            <div class="input-field col s6">
+                <i class="fa fa-user material-icons prefix" aria-hidden="true"></i>
+                <select>
+                    <option value="" disabled selected>Your relationship?</option>
+                    <option value="1">Live in landlord</option>
+                    <option value="2">bla</option>
+                    <option value="3">Bla</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <div class="right">
+                    <a class="waves-effect waves-light btn">Next</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        google.maps.event.addDomListener(window, 'load', userInputedLocationIndicator);
+    });
+</script>

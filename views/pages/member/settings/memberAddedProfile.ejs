@@ -1,8 +1,7 @@
-{% extends 'master' %}
+<% include ../../../partials/template/header.ejs %>
 
-{% block content %}
 
-  <div id="fb-root"></div>
+<div id="fb-root"></div>
 
   <script>
     // This is called with the results from from FB.getLoginStatus().
@@ -93,7 +92,7 @@
   <div class="row">
     <div class="col s3 rt-nav-left-for-member hide-on-small-only">
 
-      {% include 'member/leftNavPannel' %}
+      <% include ../../member/leftNavPannel.ejs %>
 
     </div>
 
@@ -131,4 +130,4 @@
     </div>
   </div>
 
-{% endblock %}
+<% include ../../../partials/template/footer.ejs %>
