@@ -149,7 +149,11 @@ if it's not present, don't show loader */
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
 .text {
    overflow: hidden;
    text-overflow: ellipsis;
@@ -398,6 +402,12 @@ if it's not present, don't show loader */
 .search_btn_home:hover {
   background: #707173 !important;
 }
+.search_btn_home_icon_only {
+  background: black;
+}
+.search_btn_home_icon_only:hover {
+  background: #707173 !important;
+}
 .search_home_inputBox {
   border: 1px solid #ddd !important;
   height: 43px !important;
@@ -642,7 +652,7 @@ input[type=email]:focus.valid + label:after
 #showResetPasswordForm {
   color: #ddd;
 }
-:pswd {
+.pswd {
   color: red;
 }
 #showResetPasswordForm:hover {
@@ -689,3 +699,55 @@ input[type="text"], input[type="password"] {
 }
 
 /*PROFILE END*/
+/*PROPERTY MANAGEMENT*/
+.marginTopAndWidth {
+  margin-top: 15px;
+  width: 80%;
+}
+.place-image-mobile {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.rt-top-margin {
+  margin-top: 15px;
+}
+
+.rt-place-title {
+  margin-bottom: 0px;
+}
+
+.rt-line {
+  border-right: 1px solid #ddd;
+}
+
+.set-column {
+  width: 40% !important;
+  padding-left: 2px !important;
+}
+
+.text-scroll-modified {
+  max-height: 68px;
+  max-height: 15vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.place-price {
+  margin: 5px 0px 0px 0px !important;
+}
+
+.no-padding-left {
+  padding-left: 0px !important;
+}
+
+/*1601px*/
+@media screen and (min-width: 969px) {
+  .place-image-mobile {
+    width: 80%;
+  }
+}
+/*PROPERTY MANAGEMENT END*/
