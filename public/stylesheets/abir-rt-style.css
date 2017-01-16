@@ -744,6 +744,18 @@ input[type="text"], input[type="password"] {
   padding-left: 0px !important;
 }
 
+.rt-animate-right {
+  position: relative;
+  -webkit-animation: animateright 0.4s;
+  animation: animateright 0.4s;
+}
+.rt-animate-left {
+  position: relative;
+  -webkit-animation: animateleft 0.4s;
+  animation: animateleft 0.4s;
+}
+
+
 /*1601px*/
 @media screen and (min-width: 969px) {
   .place-image-mobile {
