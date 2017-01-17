@@ -4,12 +4,14 @@
         <h4 class="center flow-text">Your ideal roommate</h4>
 
         <div class="row">
-            <div class="input-field col s12">
+            <!-- <div class="input-field col s12"> -->
 
-                <p>slide here</p>
-
-
-            </div>
+              <div id="slider" class="noUi-target noUi-ltr noUi-horizontal">
+              </div>
+              From: <span class="example-val" id="slider-margin-value-min">20.00</span>
+              <br />
+              To: <span class="example-val" id="slider-margin-value-max">80.00</span>
+            <!-- </div> -->
         </div>
 
         <div class="row">
@@ -22,6 +24,11 @@
                 </select>
             </div>
         </div>
+
+
+
+
+
 
         <div class="row">
             <div class="input-field col s12">
@@ -39,3 +46,26 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+var limitSlider = document.getElementById('slider');
+
+noUiSlider.create(limitSlider, {
+	start: [ 10, 120 ],
+	limit: 80,
+	behaviour: 'drag',
+	connect: true,
+  tooltips: [true, wNumb({ decimals: 1 })],
+	range: {
+		'min': 0,
+		'max': 100
+	}
+});
+
+var limitFieldMin = document.getElementById('slider-margin-value-min');
+var limitFieldMax = document.getElementById('slider-margin-value-max');
+
+limitSlider.noUiSlider.on('update', function( values, handle ){
+	(handle ? limitFieldMax : limitFieldMin).innerHTML = values[handle];
+});
+</script>
