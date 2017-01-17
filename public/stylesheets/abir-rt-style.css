@@ -120,14 +120,14 @@ if it's not present, don't show loader */
 }
 
 
-.no-padding {
-  padding: 0 !important;
-}
-
 .carousel .carousel-item img {
     width: 33%;
 }
 
+.rt-home-dropdown {
+  border: 1px solid #ddd;
+  height: 45px;
+}
 
 @media screen and (max-width: 1045px) {
   .desktop{
@@ -472,11 +472,14 @@ input[type=email]:focus.valid + label:after
   color: #f7f7f7;
 }
 
-.select-wrapper input.select-dropdown {
-  border: 1px solid #ddd;
-  /*background-color: rgba(24,82,87,.4);*/
-  height: 43px;
+.select-wrapper input.select-dropdown  {
+  /*border: 1px solid #ddd;
+  height: 43px;*/
 }
+
+
+
+
 .background-style {
   background: url("/assets/map1.jpg")
 }
