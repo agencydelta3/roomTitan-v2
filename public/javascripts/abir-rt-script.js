@@ -369,7 +369,6 @@ $('.carousel.carousel-slider').carousel({full_width: true});
 
 // Modal
 $(document).ready(function(){
-// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
 $('.modal').modal();
 });
 
@@ -379,3 +378,24 @@ $("#showResetPasswordForm").click(function(){
 });
 
 // PROFILE END
+
+
+
+
+
+//PROPERTY - ADD PHOTOS
+var i =1;
+$(document).ready(function(){
+	$("#clickToAdd123").click(function () {
+		if (i < 5) {
+			 $('.insert-links').append('<div style="display: none;" class="row new-link" name="link[]"><div class="col s6 imagePre" id="imagePre"><div id="onChangeImage"></div><img id="trigureFile" src="/images/home-photo-default.png" class="responsive-img auto-height" style="cursor: pointer;"><input id="file" type="file" style="display: none;"></div><div class="col s6 imagePre" id="imagePre"><div id="onChangeImage"></div><img id="trigureFile" src="/images/home-photo-default.png" class="responsive-img auto-height" style="cursor: pointer;"><input id="file" type="file" style="display: none;"></div></div>');
+			 $('.insert-links').find(".new-link:last").slideDown("slow");
+			i++;
+	    }
+		if(i>=5){
+			$('#clickToAdd123').css("display","none");			
+		}
+
+	});
+});
+//PROPERTY - ADD PHOTOS

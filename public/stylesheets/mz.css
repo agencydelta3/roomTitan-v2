@@ -342,7 +342,7 @@ hr {
 
 /*Adding property multiple photo uploading*/
 .imagePre > img {
-    width: 47% !important;
-    height: 250px;
+    width: 75% !important;
+    height: 114px;
     margin: 4px;
 }
