@@ -1,4 +1,3 @@
-// map for profile public view
 var map;
 var markers = [];
 var infowindow;
@@ -14,47 +13,48 @@ var properties = [
     {
         lat: 38.880320,
         lng: -77.168394,
-        price: "121$",
+        price: "$121",
         address: 'E Broad St & E Fairfax St',
         propertyPhoto: 'arch.jpg'
     },
     {
         lat: 38.880570,
         lng: -77.169038,
-        price: "160$",
+        price: "$160",
         address: 'Falls Church, VA 22046, USA',
         propertyPhoto: 'arch-1.jpg'
     },
     {
         lat: 38.880796,
         lng: -77.170668,
-        price: "125$",
+        price: "$125",
         address: '115 East Fairfax Street Falls Church, VA 22046, USA',
         propertyPhoto: 'arch-2.jpg'
     },
     {
         lat: 38.880194,
         lng: -77.170025,
-        price: "180$",
+        price: "$180",
         address: '203 Katie Court Falls Church, VA 22046, USA',
         propertyPhoto: 'arch-3.jpg'
     },
     {
         lat: 38.881840,
         lng: -77.171033,
-        price: "120$",
+        price: "$120",
         address: '104 East Broad Street Falls Church, VA 22046, USA',
         propertyPhoto: 'arch-4.jpg'
     },
     {
         lat: 38.879543,
         lng: -77.167857,
-        price: "160$",
+        price: "$160",
         address: '304 East Broad Street Falls Church, VA 22046, USA',
         propertyPhoto: 'city.jpg'
     }
 ];
 
+// map for profile public view
 function userProfilePropertyOnMap() {
     map = new google.maps.Map(document.getElementById('userProfileMap'), {
         center: {lat: 38.880320, lng: -77.168394}
@@ -83,7 +83,7 @@ function userProfilePropertyOnMap() {
             if (infowindow) {
                 infowindow.close(map, marker);
             }
-            infowindow = createInfoWindowForProperties(marker, property);
+            infowindow = createInfoWindowForProperties(property);
             infowindow.setOptions({pixelOffset: getInfowindowOffset(marker)});
             infowindow.open(map, marker);
         });
@@ -97,7 +97,57 @@ function userProfilePropertyOnMap() {
 
 }
 
+// map for property listing
+function propertyListingPropertyOnMap() {
+    map = new google.maps.Map(document.getElementById('propertyListingMap'), {
+        center: {lat: 38.880320, lng: -77.168394}
+    });
 
+    var bounds = new google.maps.LatLngBounds();
+    properties.forEach(function (property) {
+        propertyLatLng = {
+            lat: property.lat,
+            lng: property.lng
+        };
+        var marker = createMarkerForProperties(propertyLatLng, property.price, property.address);
+
+        markers.push(marker);
+
+        bounds.extend(propertyLatLng);
+
+        marker.addListener('mouseover', function () {
+            marker.setIcon(image_hover);
+        });
+        marker.addListener('mouseout', function () {
+            marker.setIcon(image);
+        });
+
+        marker.addListener('click', function () {
+            if (infowindow) {
+                infowindow.close(map, marker);
+            }
+            infowindow = createInfoWindowForProperties(property);
+            infowindow.setOptions({pixelOffset: getInfowindowOffset(marker)});
+            infowindow.open(map, marker);
+        });
+
+    });
+    map.fitBounds(bounds);
+
+    var markerCluster = new MarkerClusterer(map, markers, {
+        imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+    });
+
+}
+
+function autoCompleteforPropertyListing() {
+    var input = document.getElementById('goToSearch');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    autocomplete.bindTo('bounds', map);
+}
+
+
+// common map functions for placing marker and infowindow
 function createMarkerForProperties(propertyLatLng, price, address) {
     var latLng = new google.maps.LatLng(propertyLatLng);
     var marker = new google.maps.Marker({
@@ -109,21 +159,71 @@ function createMarkerForProperties(propertyLatLng, price, address) {
     return marker;
 }
 
-function createInfoWindowForProperties(marker, propertyInfo) {
-    var contentString = '<div id="content">' +
+function createInfoWindowForProperties(propertyInfo) {
+    var contentString = '<div id="iw-container">' +
         '<img src="/images/' + propertyInfo.propertyPhoto + '" class="responsive-img"> ' +
         '<div class="rt-info-window-propertyInfo-bg">' +
-        '<p>' + propertyInfo.price + '</p>' +
-        '<p>Property title</p>' +
+        '<p>Address: ' + propertyInfo.address + '</p>' +
+        '<p> <span>Price: ' + propertyInfo.price + '</span></p>' +
         '</div>' +
         '</div>';
 
-    var infowindow_created = new google.maps.InfoWindow({
+    var infowindowCreated = new google.maps.InfoWindow({
         content: contentString,
         disableAutoPan: true,
-        maxWidth: 350
+        maxWidth: 328
     });
-    return infowindow_created;
+    infowindowCreated.addListener('domready', function () {
+        // Reference to the DIV that wraps the bottom of infowindow
+        var iwOuter = $('.gm-style-iw');
+
+        /* Since this div is in a position prior to .gm-div style-iw.
+         * We use jQuery and create a iwBackground variable,
+         * and took advantage of the existing reference .gm-style-iw for the previous div with .prev().
+         */
+        var iwBackground = iwOuter.prev();
+
+        // Removes background shadow DIV
+        iwBackground.children(':nth-child(2)').css({'display': 'none'});
+
+        // Removes white background DIV
+        iwBackground.children(':nth-child(4)').css({'display': 'none'});
+
+        // bottom kuj
+        iwBackground.children(':nth-child(3)').css({'display': 'none'});
+
+        // Moves the infowindow 115px to the right.
+        iwOuter.parent().parent().css({left: '0px'});
+        iwOuter.parent().parent().css({right: '0px'});
+        iwOuter.parent().parent().css({top: '0px'});
+        iwOuter.parent().parent().css({bottom: '0px'});
+
+        // Reference to the div that groups the close button elements.
+        var iwCloseBtn = iwOuter.next();
+
+        // Apply the desired effect to the close button
+        iwCloseBtn.css({
+            width: '20px',
+            height: '20px',
+            overflow: 'hidden',
+            position: 'absolute',
+            opacity: '1',
+            right: '33px',
+            top: '4px',
+            'z-index': '10000',
+            cursor: 'pointer',
+            border: '4px solid rgb(72, 181, 233)',
+            'border-radius': '13px',
+            'box-shadow': '0 0 5px #3990B9'
+        });
+
+        // The API automatically applies 0.7 opacity to the button after the mouseout event. This function reverses this event to the desired value.
+        iwCloseBtn.mouseout(function () {
+            $(this).css({opacity: '1'});
+        });
+
+    });
+    return infowindowCreated;
 }
 
 function getInfowindowOffset(marker) {
@@ -136,7 +236,7 @@ function getInfowindowOffset(marker) {
     if (quadrant == "tr") {
         offset = new google.maps.Size(-180, 220);
     } else if (quadrant == "tl") {
-        offset = new google.maps.Size(180, 220);
+        offset = new google.maps.Size(200, 220);
     } else if (quadrant == "br") {
         offset = new google.maps.Size(-180, 20);
     } else if (quadrant == "bl") {
@@ -151,10 +251,10 @@ function getPixelFromLatLng(latLng) {
     var point = projection.fromLatLngToPoint(latLng);
     return point;
 }
+// end common map functions
 
 
 // map for add property
-
 function userInputedLocationIndicator() {
     var imagePlaceIndicator = {
         url: './images/rt_marker.png',
@@ -195,9 +295,10 @@ function userInputedLocationIndicator() {
     });
 }
 
-
 // Home photo multiple uploading for property adding
 $(function () {
+
+    // multiple uploading and preview display
     $("#trigureFile").click(function () {
         $("#file").trigger("click");
     });
@@ -215,4 +316,15 @@ $(function () {
             $("#onChangeImage").before(img);
         }
     });
+
+
+    $('.rt-property-listing-filter').sideNav({
+            menuWidth: 350, // Default is 300
+            edge: 'right', // Choose the horizontal origin
+            closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            draggable: true // Choose whether you can drag to open on touch screens
+        }
+    );
+
+
 });

@@ -1,0 +1,157 @@
+<% include ../../partials/template/header.ejs %>
+
+<style>
+    html {
+        /*overflow-y: hidden;*/
+    }
+</style>
+
+<div class="row tr-remove-margin ">
+    <div class="col s12 m5">
+        <div class="row tr-remove-margin ">
+            <div class="input-field col s3">
+                <select>
+                    <option value="" disabled selected>Type</option>
+                    <option value="1">Room</option>
+                    <option value="2">Parking space</option>
+                    <option value="3">Condo</option>
+                </select>
+            </div>
+            <div class="input-field col s7">
+                <input id="goToSearch" value="Falls Church, VA, United States" type="text" class="validate">
+                <label for="goToSearch">Type a city or state or zip code</label>
+            </div>
+            <div class="input-field col s2">
+                <a class="waves-effect waves-light rt-go-button">Go</a>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m7">
+        <!--<a data-activates="slide-out" class="rt-property-listing-filter waves-effect waves-light btn right">filter</a>-->
+    </div>
+</div>
+
+<hr class="tr-remove-margin">
+
+<div class="row">
+    <!--hide-on-small-only-->
+    <div class="col s12 m8 tr-remove-right-padding">
+        <div id="propertyListingMap" style="height: 490px;"></div>
+    </div>
+    <div class="col s12 m4">
+        <div class="row">
+            <div class="col s12">
+                <p class="center rt-total-property-found">Found 282 properties</p>
+            </div>
+        </div>
+
+        <div class="row" style="max-height: 431px; overflow: scroll;overflow-x: hidden">
+            <% for(i = 1;i <= 5;i++){ %>
+            <div class="col s12 rt-property-block">
+                <img src="https://placeimg.com/405/200/arch" class="responsive-img">
+                <div class="rt-list-short-info">
+                    <p class="rt-short-info-address">Address: 7018 Ted Dr, Falls Church, VA 22042</p>
+                    <p class="tr-remove-margin"><span class="rt-short-info-price">Price: $33.00</span></p>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+<!--filter options panel-->
+<div id="slide-out" class="side-nav rt-filter-panel">
+    <div class="row">
+        <div class="col s12">
+            <p class="center">Budget</p>
+            <p class="range-field">
+                <input type="range" id="test5" min="0" max="100"/>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <p class="center">Furnished</p>
+        <div class="col s4 center">
+            <img src="/images/couch5.png" class="responsive-img">
+        </div>
+        <div class="col s4">
+            <input type="checkbox" id="furnishedYes"/>
+            <label for="furnishedYes">Yes</label>
+        </div>
+        <div class="col s4">
+            <input type="checkbox" id="furnishedNo"/>
+            <label for="furnishedNo">No</label>
+        </div>
+    </div>
+    <div class="row">
+        <p class="center">Utilities included</p>
+        <div class="col s4 center">
+            <img src="/images/drop.png" class="responsive-img">
+            <input type="checkbox" id="waterFilter"/>
+            <label for="waterFilter"></label>
+        </div>
+        <div class="col s4 center">
+            <img src="/images/plug.png" class="responsive-img">
+            <input type="checkbox" id="plugFilter"/>
+            <label for="plugFilter"></label>
+        </div>
+        <div class="col s4 center">
+            <img src="/images/wifi.png" class="responsive-img">
+            <input type="checkbox" id="wifiFilter"/>
+            <label for="wifiFilter"></label>
+        </div>
+    </div>
+    <div class="row">
+        <p class="center">Pet-Friendly</p>
+        <div class="col s4 center">
+            <img src="/images/cat.png" class="responsive-img">
+            <input type="checkbox" id="catFilter"/>
+            <label for="catFilter"></label>
+        </div>
+        <div class="col s4 center">
+            <img src="/images/sitting-dog.png" class="responsive-img">
+            <input type="checkbox" id="dogFilter"/>
+            <label for="dogFilter"></label>
+        </div>
+        <div class="col s4 center">
+            <img src="/images/cancel.png" class="responsive-img">
+            <input type="checkbox" id="cancelPetFilter"/>
+            <label for="cancelPetFilter"></label>
+        </div>
+    </div>
+    <div class="row">
+        <p class="center">Special Rules</p>
+        <div class="col s4 center">
+            <img src="/images/pipe.png" class="responsive-img">
+            <input type="checkbox" id="pipeFilter"/>
+            <label for="pipeFilter"></label>
+        </div>
+        <div class="col s4 center">
+            <img src="/images/disabled-sign.png" class="responsive-img">
+            <input type="checkbox" id="disableFilter"/>
+            <label for="disableFilter"></label>
+        </div>
+        <div class="col s4 center">
+            <img src="/images/cancel.png" class="responsive-img">
+            <input type="checkbox" id="cancelspecialFilter"/>
+            <label for="cancelspecialFilter"></label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <a class="waves-effect waves-light btn right">apply filters</a>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        google.maps.event.addDomListener(window, 'load', propertyListingPropertyOnMap);
+        google.maps.event.addDomListener(window, 'load', autoCompleteforPropertyListing);
+    });
+</script>
+
+<% include ../../partials/template/footer.ejs %>
+

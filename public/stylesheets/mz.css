@@ -2,6 +2,10 @@
     margin: 0px;
 }
 
+.tr-remove-padding {
+    padding: 0px !important;
+}
+
 /*Custom nav*/
 hr {
     border: 1px solid rgba(0, 0, 0, 0.12);
@@ -102,16 +106,31 @@ hr {
 }
 
 .rt-info-window-propertyInfo-bg {
-    position: absolute;
-    margin-top: -50px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.54);
-    width: 92%;
+    position: relative;
+    margin-top: -53px;
+    padding: 2px 9px;
+    background-color: rgba(0, 0, 0, 0.53);
+    width: 99%;
+    margin-left: 2px;
 }
 
 .rt-info-window-propertyInfo-bg p {
+    margin: 0px;
     color: #fff;
-    margin: 2px;
+    font-weight: 200;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.rt-info-window-propertyInfo-bg p span {
+    margin: 0px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 /*End user profile*/
@@ -345,4 +364,76 @@ hr {
     width: 75% !important;
     height: 114px;
     margin: 4px;
+}
+
+/*Property listing page*/
+.rt-go-button {
+    background-color: #ee6e73;
+    padding: 8px;
+    border-radius: 46%;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.rt-total-property-found {
+    margin: 4px 0px 8px;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.rt-list-short-info {
+    background-color: rgba(0, 0, 0, 0.53);
+    margin-top: -57px;
+    position: relative;
+    padding: 4px 9px;
+    width: 100%;
+}
+
+.rt-short-info-address {
+    margin: 0px;
+    color: #fff;
+    font-weight: 200;
+    font-size: 13px;
+}
+
+.rt-short-info-price {
+    margin: 0px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.rt-property-block {
+    margin-bottom: 6px;
+}
+
+.tr-remove-right-padding {
+    padding-right: 0px
+}
+
+.gm-style-iw {
+    width: 328px !important;
+    height: 191px !important;
+}
+
+.gm-style-iw img {
+    width: 328px;
+    height: 193px;
+    box-shadow: 0 1px 6px rgba(178, 178, 178, 0.6);
+    border: 1px solid rgba(72, 181, 233, 0.6);
+}
+
+.rt-total-flax {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+}
+
+.rt-flax-property {
+    -webkit-flex: 1; /* Safari 6.1+ */
+    -ms-flex: 1; /* IE 10 */
+    flex: 1;
+}
+
+.rt-filter-panel p {
+    color: #ee6e73;
 }
