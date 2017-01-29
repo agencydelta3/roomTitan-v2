@@ -459,3 +459,16 @@ hr {
     color: #000 !important;
     font-size: 12px;
 }
+.rt-costom_hover_img:hover {
+    transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+}
+.rt-costom_hover_img {
+    transition: transform 0.2s;
+    -webkit-transition: -webkit-transform 0.2s;
+    -moz-transition: -moz-transform 0.2s;
+    -o-transition: -o-transform 0.2s;
+}
