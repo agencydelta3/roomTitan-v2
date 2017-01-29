@@ -3,3 +3,4 @@ module.exports.controller = function (app) {
         res.render('pages/propertyListing/propertyList');
     });
 };
+ 
