@@ -51,6 +51,13 @@ var properties = [
         price: "$160",
         address: '304 East Broad Street Falls Church, VA 22046, USA',
         propertyPhoto: 'city.jpg'
+    },
+    {
+        lat: 38.895301,
+        lng: -77.189412,
+        price: "$160",
+        address: '7039-7055 Haycock Rd Falls Church, VA 22046, USA',
+        propertyPhoto: 'arch-3.jpg'
     }
 ];
 
@@ -328,3 +335,4 @@ $(function () {
 
 
 });
+

@@ -1,5 +1,5 @@
 .tr-remove-margin {
-    margin: 0px;
+    margin: 0px !important;
 }
 
 .tr-remove-padding {
@@ -379,6 +379,10 @@ hr {
     margin: 4px 0px 8px;
     font-size: 19px;
     font-weight: 500;
+    background-color: rgba(3, 169, 244, 0.62);
+    padding: 4px 0px;
+    color: #fff;
+    border-radius: 8px 8px 0px 0px;
 }
 
 .rt-list-short-info {
@@ -435,5 +439,23 @@ hr {
 }
 
 .rt-filter-panel p {
-    color: #ee6e73;
+    color: #2196F3;
+    margin-top: 24px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.rt-rent-range-for-filter {
+    padding: 0px 16px;
+}
+.noUi-horizontal .noUi-handle {
+    width: 34px !important;
+    height: 34px !important;
+    left: -17px !important;
+    top: -10px !important;
+    border-radius: 50%;
+}
+.rt-range-number{
+    color: #000 !important;
+    font-size: 12px;
 }
