@@ -686,10 +686,10 @@ input[type=email]:focus.valid + label:after
   padding-left: 8rem;
 }
 
-input[type="text"], input[type="password"] {
+/*input[type="text"], input[type="password"] {
   width: 40%;
   text-align: center;
-}
+}*/
 
 .glyphicon-eye-open1 {
   display: none;
@@ -702,6 +702,10 @@ input[type="text"], input[type="password"] {
 }
 
 /*PROFILE END*/
+
+
+
+
 /*PROPERTY MANAGEMENT*/
 .marginTopAndWidth {
   margin-top: 15px;
@@ -773,3 +777,20 @@ input[type="text"], input[type="password"] {
 	height: auto !important;
 }
 /*PROPERTY - ADD PHOTOS */
+
+
+
+/*ADD EXPENSES*/
+.bottom-margin {
+  margin-bottom: 60px;
+}
+
+#expense_amount {
+  margin-top: -10px;
+  margin-left: -12px;
+}
+
+#add-expense-amount {
+  display: inline-flex;
+}
+/*END ADD EXPENSES*/
