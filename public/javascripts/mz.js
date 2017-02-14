@@ -324,7 +324,7 @@ $(function () {
         }
     });
 
-
+    // property listing page
     $('.rt-property-listing-filter').sideNav({
             menuWidth: 350, // Default is 300
             edge: 'right', // Choose the horizontal origin
@@ -333,6 +333,19 @@ $(function () {
         }
     );
 
+    // payed received history
+    $('#payedBtn').click(function () {
+        $('#receivedTableShow').css('display', 'none');
+        $('#payedTableShow').css('display', 'block');
+        $('#payedBtn').addClass('rt-payed-received-btn-active');
+        $('#receivedBtn').removeClass('rt-payed-received-btn-active');
+    });
+    $('#receivedBtn').click(function () {
+        $('#receivedTableShow').css('display', 'block');
+        $('#payedTableShow').css('display', 'none');
+        $('#receivedBtn').addClass('rt-payed-received-btn-active');
+        $('#payedBtn').removeClass('rt-payed-received-btn-active');
+    });
 
 });
 

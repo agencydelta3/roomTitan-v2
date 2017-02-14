@@ -1,0 +1,62 @@
+<% include ../../../partials/template/header.ejs %>
+
+<div class="row">
+    <div class="col s12 m3 rt-nav-left-for-member hide-on-small-only">
+
+        <% include ../../member/leftNavPannel.ejs %>
+
+    </div>
+
+    <div class="col s12 m9">
+        <div class="row">
+            <div class="col s12 m10">
+                <h4 class="center">
+                    <small>Records of 2011</small>
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12 m10">
+                <div class="rt-all-month-btn">
+                    <button>All</button>
+                    <button>January</button>
+                    <button>February</button>
+                    <button>Match</button>
+                    <button>April</button>
+                    <button>May</button>
+                    <button>Jun</button>
+                    <button>July</button>
+                    <button>August</button>
+                    <button>September</button>
+                    <button>October</button>
+                    <button>November</button>
+                    <button>December</button>
+                </div>
+                <div class="rt-recorde-table">
+                    <table class="striped">
+                        <thead>
+                        <tr>
+                            <th data-field="id">Day</th>
+                            <th data-field="name">Expenses</th>
+                            <th data-field="price">Amount</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <% for(i = 1;i <= 20;i++){ %>
+                        <tr>
+                            <td><%= Math.floor(Math.random() * 30) %>-February</td>
+                            <td>Maintenance</td>
+                            <td>$<%= Math.floor(Math.random() * 1000) %></td>
+                        </tr>
+                        <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<% include ../../../partials/template/footer.ejs %>

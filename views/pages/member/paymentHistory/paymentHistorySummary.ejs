@@ -1,0 +1,105 @@
+<% include ../../../partials/template/header.ejs %>
+
+<div class="row">
+    <div class="col s12 m3 rt-nav-left-for-member hide-on-small-only">
+
+        <% include ../../member/leftNavPannel.ejs %>
+
+    </div>
+
+    <div class="col s12 m9">
+        <!--<h4>Payment history</h4>-->
+        <!--<div class="row">-->
+        <!--<div class="col s12">-->
+        <!--<a class="waves-effect waves-light btn right">make payment</a>-->
+        <!--</div>-->
+        <!--<div class="col s12">-->
+        <!--<p class="right"><a class=right"">Set account</a></p>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <div class="col s12 m6 offset-m3">
+                        <p class="center rt-payed-received-btn tr-remove-margin">
+                            <a id="payedBtn"
+                               class="waves-effect waves-light btn 9e9e9e grey rt-payed-received-btn-active">Payed</a>
+                            <a id="receivedBtn" class="waves-effect waves-light btn 9e9e9e grey">Received</a>
+                        </p>
+                    </div>
+                </div>
+                <hr>
+
+                <div id="payedTableShow">
+                    <table class="striped responsive-table rt-payment-history-table">
+                        <thead>
+                        <tr>
+                            <th data-field="id">Property title</th>
+                            <th data-field="name">Last payed</th>
+                            <th data-field="price">Amount</th>
+                            <th data-field="price">History</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <% for(i = 1;i <= 5;i++){ %>
+                        <tr>
+                            <td>
+                                <p class="rt-payment-history-pro-name">Room for rent washington DC <%= i %></p>
+                                <img src="/images/home.jpeg" class="responsive-img hide-on-small-only">
+
+                            </td>
+                            <td>
+                                <p class=""><i class="fa fa-calendar" aria-hidden="true"></i> 02/12/2017</p>
+                            </td>
+                            <td>
+                                <p class=""><i class="fa fa-usd" aria-hidden="true"></i> 1200.00</p>
+                            </td>
+                            <td>
+                                <p class=""><i class="fa fa-history fa-2x" aria-hidden="true"></i></p>
+                            </td>
+                        </tr>
+                        <% } %>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="receivedTableShow" style="display: none">
+                    <table class="striped responsive-table rt-payment-history-table">
+                        <thead>
+                        <tr>
+                            <th data-field="id">Property title</th>
+                            <th data-field="name">Last received</th>
+                            <th data-field="price">Amount</th>
+                            <th data-field="price">History</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <% for(i = 1;i <= 3;i++){ %>
+                        <tr>
+                            <td>
+                                <p class="rt-payment-history-pro-name">Room for rent washington DC <%= i + 10 %></p>
+                                <img src="/images/home.jpeg" class="responsive-img hide-on-small-only">
+
+                            </td>
+                            <td>
+                                <p class=""><i class="fa fa-calendar" aria-hidden="true"></i> 03/22/2017</p>
+                            </td>
+                            <td>
+                                <p class=""><i class="fa fa-usd" aria-hidden="true"></i> 1500.00</p>
+                            </td>
+                            <td>
+                                <p class=""><i class="fa fa-history fa-2x" aria-hidden="true"></i></p>
+                            </td>
+                        </tr>
+                        <% } %>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../../../partials/template/footer.ejs %>

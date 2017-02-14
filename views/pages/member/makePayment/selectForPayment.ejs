@@ -1,0 +1,47 @@
+<% include ../../../partials/template/header.ejs %>
+
+<div class="row">
+    <div class="col s12 m3 rt-nav-left-for-member hide-on-small-only">
+
+        <% include ../../member/leftNavPannel.ejs %>
+
+    </div>
+
+    <div class="col s12 m9">
+        <div class="row">
+            <div class="col s12 m8">
+                <h3>Payment</h3>
+                <a class="waves-effect waves-light btn right">make payment</a>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fa fa-home material-icons prefix" aria-hidden="true"></i>
+                        <select>
+                            <option value="" disabled selected>Select property to pay</option>
+                            <option value="1">Property 1</option>
+                            <option value="2">Property 2</option>
+                            <option value="2">Property 3</option>
+                            <option value="2">Property 4</option>
+                            <option value="2">Property 5</option>
+                        </select>
+                    </div>
+                </div>
+                <p class="center tr-remove-margin">Rent started on: 02/22/2017</p>
+            </div>
+        </div>
+        <div class="row rt-payment-method">
+            <div class="col s12 m8">
+                <div class="row">
+                    <h5 class="center rt-select-a-method">Select a method</h5>
+                    <div class="col s6 center">
+                        <img src="/images/paypal-logo.png" class="responsive-img">
+                    </div>
+                    <div class="col s6 center">
+                        <img src="/images/braintree-logo.jpg" class="responsive-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../../../partials/template/footer.ejs %>

@@ -1,0 +1,65 @@
+<% include ../../../partials/template/header.ejs %>
+
+<div class="row">
+    <div class="col s12 m3 rt-nav-left-for-member hide-on-small-only">
+
+        <% include ../../member/leftNavPannel.ejs %>
+
+    </div>
+
+    <div class="col s12 m9">
+        <div class="row">
+            <div class="col s12 m8">
+                <h3 class="center">Property management <br>
+                    <small>Add expenses</small>
+                </h3>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fa fa-home material-icons prefix" aria-hidden="true"></i>
+                        <select>
+                            <option value="" disabled selected>Please select a property</option>
+                            <option value="1">Property 1</option>
+                            <option value="2">Property 2</option>
+                            <option value="2">Property 3</option>
+                            <option value="2">Property 4</option>
+                            <option value="2">Property 5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fa fa-money material-icons prefix" aria-hidden="true"></i>
+                        <select>
+                            <option value="" disabled selected>Type of expenses</option>
+                            <option value="1">expenses type 1</option>
+                            <option value="1">expenses type 2</option>
+                            <option value="1">expenses type 3</option>
+                            <option value="1">expenses type 4</option>
+                            <option value="1">expenses type 5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <i class="fa fa-calendar material-icons prefix" aria-hidden="true"></i>
+                        <input type="date" class="datepicker" placeholder="Please select date">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <i class="fa fa-usd prefix" aria-hidden="true"></i>
+                        <input id="addExpensesAmount" type="text" class="validate">
+                        <label for="addExpensesAmount">Amount</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <a class="waves-effect waves-light btn right">done</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../../../partials/template/footer.ejs %>

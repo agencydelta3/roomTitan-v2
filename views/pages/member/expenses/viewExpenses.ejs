@@ -1,0 +1,67 @@
+<% include ../../../partials/template/header.ejs %>
+
+<div class="row">
+    <div class="col s12 m3 rt-nav-left-for-member hide-on-small-only">
+
+        <% include ../../member/leftNavPannel.ejs %>
+
+    </div>
+
+    <div class="col s12 m9">
+        <div class="row">
+            <div class="col s12 m8">
+                <h3 class="center">Property management <br>
+                    <small>View Records</small>
+                </h3>
+                <div class="row">
+                    <div class="input-field col s12 m7">
+                        <i class="fa fa-home material-icons prefix" aria-hidden="true"></i>
+                        <select>
+                            <option value="" disabled selected>Please select a property</option>
+                            <option value="1">Property 1</option>
+                            <option value="2">Property 2</option>
+                            <option value="2">Property 3</option>
+                            <option value="2">Property 4</option>
+                            <option value="2">Property 5</option>
+                        </select>
+                    </div>
+                    <div class="input-field col s12 m5">
+                        <i class="fa fa-calendar material-icons prefix" aria-hidden="true"></i>
+                        <select>
+                            <option value="" disabled selected>Please select a year</option>
+                            <% for(i = 2011;i <= 2017;i++){ %>
+                            <option value="1"><%= i %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <a class="waves-effect waves-light btn right btn-block">done</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6 offset-m3">
+                        <div class="rt-aggregated-result">
+                            <p class="center">2011</p>
+                            <p class="center">{Aggregated}</p>
+                            <p>Income <span class="right">$12005000</span></p>
+                            <p>Expenses <span class="right">$5000</span></p>
+                            <hr>
+                            <p>Profit <span class="right">$12000000</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <a href="/details-view-expenses" class="right">Details >></a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../../../partials/template/footer.ejs %>

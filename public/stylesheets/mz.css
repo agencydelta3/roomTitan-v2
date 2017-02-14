@@ -448,6 +448,7 @@ hr {
 .rt-rent-range-for-filter {
     padding: 0px 16px;
 }
+
 .noUi-horizontal .noUi-handle {
     width: 34px !important;
     height: 34px !important;
@@ -455,10 +456,12 @@ hr {
     top: -10px !important;
     border-radius: 50%;
 }
-.rt-range-number{
+
+.rt-range-number {
     color: #000 !important;
     font-size: 12px;
 }
+
 .rt-costom_hover_img:hover {
     transform: scale(1.02);
     -ms-transform: scale(1.02);
@@ -466,9 +469,89 @@ hr {
     -moz-transform: scale(1.02);
     -o-transform: scale(1.02);
 }
+
 .rt-costom_hover_img {
     transition: transform 0.2s;
     -webkit-transition: -webkit-transform 0.2s;
     -moz-transition: -moz-transform 0.2s;
     -o-transition: -o-transform 0.2s;
+}
+
+/*View expenses page*/
+.rt-aggregated-result p {
+    padding: 0px 16px;
+}
+
+.rt-all-month-btn {
+    width: 20%;
+    float: left;
+    margin-top: 52px;
+}
+
+.rt-all-month-btn button {
+    width: 100%;
+    border-radius: 16px 0px 0px 0px;
+    color: #FFF;;
+}
+
+.rt-recorde-table {
+    width: 80%;
+    float: right;
+}
+
+/*make payment method*/
+.rt-payment-method img {
+    border: 4px solid rgba(76, 175, 80, 0.76);
+    padding: 13px;
+}
+
+.rt-select-a-method {
+    margin-top: 5rem;
+    margin-bottom: 22px;
+}
+
+/*payment history*/
+.rt-payed-received-btn {
+
+}
+
+.rt-payed-received-btn ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.rt-payed-received-btn li {
+    float: left;
+}
+
+.rt-payed-received-btn li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.rt-payed-received-btn a {
+    width: 45%;
+    border-radius: 12px 12px 0px 0px;
+}
+.rt-payment-history-table p{
+    margin: 0px 2px;
+}
+.rt-payment-history-table img{
+    width: 93px;
+    margin: 0px 1px;
+    border-radius: 5px;
+}
+.rt-payment-history-pro-name{
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+.rt-payed-received-btn-active{
+    background-color: #616161 !important;
 }
